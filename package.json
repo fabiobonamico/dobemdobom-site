@@ -1,25 +1,10 @@
 {
-  "name": "artistree",
-  "description": "Astro Template - Link in Bio Page para Artistas",
-  "author": {
-    "name": "Franco Suárez",
-    "email": "francosuarez.dev@gmail.com",
-    "url": "https://github.com/francosuarez-dev"
-  },
-  "keywords": [
-    "astro",
-    "tailwind",
-    "music",
-    "artist",
-    "link-in-bio",
-    "landing",
-    "linktree",
-    "short"
-  ],
+  "name": "dobemdobom-web",
+  "description": "Astro Template - Link in Bio Page",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 8080 --host",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -31,6 +16,8 @@
     "clsx": "^2.1.1",
     "flag-icons": "^7.5.0",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "three": "^0.181.2",
+    "vanta": "^0.5.24"
   }
 }
