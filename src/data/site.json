@@ -2,7 +2,7 @@
   "config": {
     "title": "Tatu do Bem | Marca brasileira de sedas para cigarro (papéis de enrolar)",
     "description": "Produtos que colocam um sorriso no rosto e uma ideia na cabeça. Do bem, do bom, de boa. Então, Tatu do Bem.",
-    "theme": "orange",
+    "theme": "green",
     "font": "grotesk",
     "copyright": "© 2025 TATUDOBEM.ETC.BR"
   },
@@ -13,11 +13,9 @@
     "picture": "/img/profile.png"
   },
   "socials": {
-    "instagram": "#",
-    "facebook": "#",
-    "x": "#",
-    "youtube": "#",
-    "tiktok": "#"
+    "instagram": "https://www.instagram.com/tatudobemtabacaria/",
+    "website": "#",
+    "whatsapp": "https://api.whatsapp.com/send/?phone=%2B5527999101083&text=Ol%C3%A1,%20Tatu%20do%20Bem!"
   },
   "booking": {
     "email": "sac@tatudobem.etc.br",
@@ -45,47 +43,38 @@
   ],
   "releases": [
     {
-      "title": "Noche Eterna",
-      "album": "Noche Eterna Album",
+      "title": "Linha Seda Boa",
+      "album": "Papel a base de cânhamo ultrafino",
       "releaseDate": "2025-08-15",
       "cover": "/img/covers/cover1.webp",
       "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "applemusic": "https://music.apple.com/...",
-        "youtube": "https://www.youtube.com/shorts/sRrhJFemh2k"
-      }
-    },
-    {
-      "title": "Amanecer",
-      "album": "Noche Eterna Album",
-      "releaseDate": "2025-05-02",
-      "cover": "/img/covers/cover1.webp",
-      "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "applemusic": "https://music.apple.com/...",
+        "spotify": "#",
+        "applemusic": "#",
         "youtube": "https://www.youtube.com/shorts/sRrhJFemh2k"
       }
     }
+
   ],
   "links": [
     {
       "label": "Instagram",
       "description": "@tatudobemtabacaria",
       "url": "https://www.instagram.com/tatudobemtabacaria/",
-      "icon": "instagram"
+      "icon": "instagram",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
     },
     {
       "label": "Loja online",
       "description": "Em breve",
       "url": "#",
-      "icon": "website",
-      "cover": "/img/profile.png"
+      "icon": "website"
     },
     {
       "label": "Área do lojista",
       "description": "Em breve",
       "url": "#",
-      "icon": "website"
+      "icon": "lock"
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 import Section from "../layouts/Section.astro";
-import { MusicIcon, ShareIcon } from "../icons";
+import { ShareIcon } from "../icons";
 import SocialIcons from "./SocialIcons.astro";
 import { Image } from 'astro:assets';
 
@@ -18,25 +18,18 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
 <Section>
   <header class="py-2">
     <div class="relative mb-6">
-      <Image
-        src={picture}
+      <img
+        src="/img/tatudobem-logo.png"
         alt={name}
         loading="eager"
-        class="w-32 h-32 rounded-full mx-auto border-2 border-white/20 shadow-2xl object-cover backdrop-blur-xl bg-white/5"
-        height={128}
-        width={128}
+        class="w-fit h-fit mx-auto object-cover"
       />
-      <div
-        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20"
-      >
-        <MusicIcon class="text-white size-5" />
-      </div>
       <div class="absolute top-0 right-0 flex items-center justify-center bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20 cursor-pointer hover:bg-white/20 transition-colors" id="share-button">
         <ShareIcon class="text-foreground" />
       </div>
     </div>
-    <h1 class="text-3xl font-bold text-foreground mb-2">{name}</h1>
-    <p class="text-foreground/80 text-lg">{description}</p>
+    <h1 class="text-3xl font-bold text-foreground mb-2 sr-only">{name}</h1>
+    <p class="text-foreground/90 text-lg">{description}</p>
     <p class="text-foreground/60 text-sm mt-2">
       {bio}
     </p>

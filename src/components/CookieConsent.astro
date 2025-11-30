@@ -1,0 +1,54 @@
+---
+// src/components/CookieConsent.astro
+---
+<div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 text-center z-50 hidden">
+  <p class="text-sm md:text-base">
+    Este site usa cookies para garantir que você obtenha a melhor experiência. Ao continuar, você concorda com nossa 
+    <a href="/privacidade" class="underline hover:text-gray-300">Política de Privacidade</a>.
+  </p>
+  <button id="accept-cookies" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg mt-3">
+    Aceitar
+  </button>
+</div>
+
+<script>
+  const GA_MEASUREMENT_ID = 'G-3SY1EDK53L'; // <-- SUBSTITUA PELO SEU ID
+
+  function loadGoogleAnalytics() {
+    if (document.querySelector(`script[src*="${GA_MEASUREMENT_ID}"]`)) {
+      return; // Script already loaded
+    }
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+    console.log('Google Analytics loaded.');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-consent-banner');
+    const acceptButton = document.getElementById('accept-cookies');
+    const hasConsent = () => document.cookie.split(';').some((item) => item.trim().startsWith('cookie_consent=true'));
+
+    if (hasConsent()) {
+      loadGoogleAnalytics();
+    } else {
+      banner.classList.remove('hidden');
+    }
+
+    acceptButton.addEventListener('click', () => {
+      const d = new Date();
+      d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = "cookie_consent=true;" + expires + ";path=/";
+      
+      banner.classList.add('hidden');
+      loadGoogleAnalytics();
+    });
+  });
+</script>

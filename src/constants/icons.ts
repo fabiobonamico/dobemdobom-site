@@ -8,8 +8,9 @@ import {
   WhatsappIcon,
   YoutubeIcon,
   EmailIcon,
-  GlobeIcon,
+  CartIcon,
   TiktokIcon,
+  LockIcon,
 } from "../icons";
 
 export const ICON_MAP: Record<string, any> = {
@@ -22,6 +23,7 @@ export const ICON_MAP: Record<string, any> = {
   whatsapp: WhatsappIcon,
   youtube: YoutubeIcon,
   email: EmailIcon,
-  website: GlobeIcon,
+  website: CartIcon,
   tiktok: TiktokIcon,
+  lock: LockIcon,
 };

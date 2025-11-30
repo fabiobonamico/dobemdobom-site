@@ -10,9 +10,11 @@ interface Props {
   url: string;
   icon: string;
   cover?: string;
+  target?: string;
+  rel?: string;
 }
 
-const { label, url, description, icon, cover }: Props = Astro.props;
+const { label, url, description, icon, cover, target, rel }: Props = Astro.props;
 
 const colorsMap: Record<string, string> = {
   instagram: "from-pink-500 via-red-500 to-yellow-500", // clásico degradado IG
@@ -26,11 +28,14 @@ const colorsMap: Record<string, string> = {
   email: "from-indigo-500 to-indigo-700", // azul clásico para mail
   website: "from-gray-500 to-gray-700", // gris neutro
   tiktok: "from-cyan-500 to-pink-500", // cian/rosa TikTok
+  lock: "from-gray-500 to-gray-700", // indigo neutro for lock icon
 };
 ---
 
 <a
   href={url}
+  target={target}
+  rel={rel}
   class="group block bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 hover:shadow-xl hover:scale-[1.02]"
 >
   <div class="flex items-center gap-4">
@@ -82,3 +87,18 @@ const colorsMap: Record<string, string> = {
     </div>
   </div>
 </a>
+
+<script>
+  document.querySelectorAll('a[href="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      Toastify({
+        text: "👀 Em breve!",
+        duration: 2000,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        backgroundColor: "linear-gradient(to right,rgb(211, 90, 9),rgb(245, 118, 0))",
+      }).showToast();
+    });
+  });
+</script>

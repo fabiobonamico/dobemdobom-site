@@ -1,6 +1,6 @@
 export { default as MusicIcon } from "./MusicIcon.astro";
 export { default as EmailIcon } from "./EmailIcon.astro";
-export { default as GlobeIcon } from "./GlobeIcon.astro";
+
 export { default as PhoneIcon } from "./PhoneIcon.astro";
 export { default as TicketsIcon } from "./TicketsIcon.astro";
 export { default as InstagramIcon } from "./InstagramIcon.astro";
@@ -15,3 +15,5 @@ export { default as PlayIcon } from "./PlayIcon.astro";
 export { default as TiktokIcon } from "./TiktokIcon.astro";
 export { default as ExternalLinkIcon } from "./ExternalLinkIcon.astro";
 export { default as ShareIcon } from "./ShareIcon.astro";
+export { default as CartIcon } from "./CartIcon.astro";
+export { default as LockIcon } from "./LockIcon.astro";

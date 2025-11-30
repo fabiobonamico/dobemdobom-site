@@ -1,7 +1,7 @@
 ---
-import "flag-icons/css/flag-icons.min.css";
 import "../styles/global.css";
 import type { Theme, FontPreset } from "../types/theme";
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
   title: string;
@@ -36,6 +36,20 @@ const FONT_LINKS: Record<FontPreset, string> = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
   </head>
   <body>
     <div
@@ -45,11 +59,12 @@ const FONT_LINKS: Record<FontPreset, string> = {
       {/* Content */}
       <slot />
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
       import * as THREE from 'three';
       import CLOUDS from 'vanta/dist/vanta.clouds2.min.js';
     
-      CLOUDS({
+      const vantaEffect = CLOUDS({
         el: '#vanta-bg',
         THREE: THREE,
         mouseControls: true,
@@ -57,8 +72,20 @@ const FONT_LINKS: Record<FontPreset, string> = {
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        speed: 0.6
+        speed: 0.6,
+        backgroundColor: 0x411d0b,
+        skyColor: 0x9212d
       });
+
+      const setVantaHeight = () => {
+        if (vantaEffect) {
+          vantaEffect.resize();
+        }
+      };
+
+      window.addEventListener('resize', setVantaHeight);
+      setVantaHeight();
     </script>
+    <CookieConsent />
   </body>
 </html>

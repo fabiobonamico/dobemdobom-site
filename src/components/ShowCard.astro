@@ -1,17 +1,17 @@
+
 ---
-import { TicketsIcon, GlobeIcon } from "../icons";
+import { TicketsIcon, CartIcon } from "../icons";
 
 interface Props {
   title: string;
   date: string;
   city: string;
-  country?: string;
   venue: string;
   tickets?: string;
   available: boolean;
 }
 
-const { date, city, country, venue, tickets, available }: Props = Astro.props;
+const { date, city, venue, tickets, available }: Props = Astro.props;
 
 const d = new Date(date);
 
@@ -23,10 +23,6 @@ const day = new Intl.DateTimeFormat("es-AR", { day: "2-digit" }).format(d);
 const month = new Intl.DateTimeFormat("es-AR", { month: "short" })
   .format(d)
   .toUpperCase();
-
-// bandera dinámica: <span class="fi fi-ar"></span>
-const cc = (country ?? "").toLowerCase();
-const flagClass = cc ? `fi fi-${cc}` : null;
 ---
 
 <li
@@ -46,13 +42,7 @@ const flagClass = cc ? `fi fi-${cc}` : null;
         <div>
           <h3 class="text-foreground font-semibold">{venue}</h3>
           <p class="text-foreground/70 flex items-center gap-1">
-            {
-              flagClass ? (
-                <span class={`${flagClass} rounded shrink-0`} title={country} />
-              ) : (
-                <GlobeIcon size={18} class="text-muted-foreground shrink-0" />
-              )
-            }
+            <CartIcon size={18} class="text-muted-foreground shrink-0" />
             {city}
           </p>
         </div>
