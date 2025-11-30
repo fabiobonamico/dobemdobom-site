@@ -24,7 +24,7 @@ const FONT_LINKS: Record<FontPreset, string> = {
 ---
 
 <!doctype html>
-<html lang="es-AR" data-theme={theme} data-font={font}>
+<html lang="pt-BR" data-theme={theme} data-font={font}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -36,6 +36,36 @@ const FONT_LINKS: Record<FontPreset, string> = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content={Astro.url.origin + "/img/profile.png"} />
+    <meta property="og:image:alt" content={title} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={Astro.url.origin + "/img/profile.png"} />
+    <meta name="twitter:image:alt" content={title} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content={Astro.url.origin + "/img/profile.png"} />
+    <meta property="og:image:alt" content={title} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={Astro.url.origin + "/img/profile.png"} />
+    <meta name="twitter:image:alt" content={title} />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <style>
       .sr-only {
