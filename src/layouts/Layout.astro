@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import type { Theme, FontPreset } from "../types/theme";
 import CookieConsent from '../components/CookieConsent.astro';
-import Posthog from '../components/Posthog.astro';
 
 interface Props {
   title: string;
@@ -37,7 +36,6 @@ const FONT_LINKS: Record<FontPreset, string> = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <Posthog />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
