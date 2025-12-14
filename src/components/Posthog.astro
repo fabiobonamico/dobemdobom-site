@@ -1,0 +1,15 @@
+---
+// src/components/Posthog.astro
+---
+<script>
+  import posthog from 'posthog-js';
+
+  const posthogKey = import.meta.env.PUBLIC_POSTHOG_KEY;
+  const posthogHost = import.meta.env.PUBLIC_POSTHOG_HOST;
+
+  if (typeof window !== 'undefined' && posthogKey && posthogHost) {
+    posthog.init(posthogKey, {
+      api_host: posthogHost,
+    });
+  }
+</script>
